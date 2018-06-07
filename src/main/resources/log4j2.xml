@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!--set message format in console-->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}.%M - %msg%n" />
+        </Console>
+
+        <!--set message format in file-->
+        <File name="file" fileName="target\cvRobot Maven Log\log.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}.%M - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!--set messages to show-->
+        <Root level="debug">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
